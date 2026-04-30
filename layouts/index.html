@@ -1,0 +1,73 @@
+{{ define "main" }}
+  {{ $items := where site.RegularPages "Section" "items" }}
+  {{ $available := where $items "Params.status" "!=" "sold" }}
+  {{ $sold := where $items "Params.status" "sold" }}
+  {{ $categories := slice }}
+  {{ range $available }}
+    {{ with .Params.category }}
+      {{ $categories = $categories | append . }}
+    {{ end }}
+  {{ end }}
+
+  <section class="catalog-hero">
+    <div>
+      <p class="eyebrow">{{ site.Params.location }}</p>
+      <h1>{{ .Title }}</h1>
+      <div class="intro">{{ .Content }}</div>
+    </div>
+    <aside class="summary-panel" aria-label="Catalog summary">
+      <strong>{{ len $available }}</strong>
+      <span>available now</span>
+      <small>{{ len $sold }} sold or pending</small>
+    </aside>
+  </section>
+
+  {{ if $categories }}
+    <nav class="category-nav" aria-label="Categories">
+      <a href="#available">All</a>
+      {{ range uniq $categories }}
+        <a href="#{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+    </nav>
+  {{ end }}
+
+  <section id="available" class="item-section">
+    <div class="section-heading">
+      <h2>Available Items</h2>
+      <p>Prices are listed on each item. Pickup details can be arranged by email.</p>
+    </div>
+
+    {{ range $category := uniq $categories }}
+      {{ $categoryItems := where $available "Params.category" $category }}
+      <div id="{{ $category | urlize }}" class="category-group">
+        <h3>{{ $category }}</h3>
+        <div class="item-grid">
+          {{ range sort $categoryItems "Params.featured" "desc" }}
+            {{ partial "item-card.html" . }}
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </section>
+
+  {{ if $sold }}
+    <section class="item-section muted-section">
+      <div class="section-heading">
+        <h2>Sold</h2>
+      </div>
+      <div class="item-grid compact-grid">
+        {{ range $sold }}
+          {{ partial "item-card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  <section id="contact" class="contact-band">
+    <div>
+      <p class="eyebrow">Interested?</p>
+      <h2>Send the item name and a good pickup window.</h2>
+    </div>
+    <a class="button" href="mailto:{{ site.Params.contactEmail }}?subject=Item%20for%20sale%20inquiry">Email {{ site.Params.sellerName }}</a>
+  </section>
+{{ end }}

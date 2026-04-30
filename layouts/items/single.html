@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <article class="detail-layout">
+    <div class="detail-media">
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" width="1200" height="900">
+      {{ end }}
+    </div>
+    <div class="detail-copy">
+      <a class="back-link" href="{{ site.Home.RelPermalink }}">Back to all items</a>
+      <p class="item-meta">{{ .Params.category }} · {{ .Params.condition }}</p>
+      <h1>{{ .Title }}</h1>
+      <p class="detail-price">{{ site.Params.currency }}{{ lang.FormatNumber 0 .Params.price }}</p>
+      {{ with .Params.dimensions }}
+        <p class="dimensions">Dimensions: {{ . }}</p>
+      {{ end }}
+      <div class="prose">{{ .Content }}</div>
+      <a class="button" href="mailto:{{ site.Params.contactEmail }}?subject={{ .Title | urlquery }}">Ask about this item</a>
+    </div>
+  </article>
+{{ end }}

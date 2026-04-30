@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Item photo placeholder">
+  <rect width="1200" height="900" fill="#e9e0d2"/>
+  <rect x="110" y="96" width="980" height="708" rx="18" fill="#f8f4ea" stroke="#d6c9b8" stroke-width="4"/>
+  <circle cx="312" cy="300" r="90" fill="#506b5a" opacity=".88"/>
+  <rect x="430" y="238" width="430" height="124" rx="14" fill="#a85f3a" opacity=".9"/>
+  <rect x="300" y="486" width="600" height="86" rx="12" fill="#c9983b" opacity=".95"/>
+  <rect x="382" y="586" width="78" height="130" rx="8" fill="#506b5a" opacity=".9"/>
+  <rect x="740" y="586" width="78" height="130" rx="8" fill="#506b5a" opacity=".9"/>
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#2a261f">Add item photo</text>
+</svg>

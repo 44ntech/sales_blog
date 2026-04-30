@@ -1,0 +1,17 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Scott's Sale"
+
+[params]
+sellerName = "Scott"
+contactEmail = "hello@example.com"
+contactPhone = ""
+location = "Local pickup"
+currency = "$"
+description = "A simple, fast catalog for items currently available for local sale."
+
+[taxonomies]
+category = "categories"
+
+[markup.goldmark.renderer]
+unsafe = true

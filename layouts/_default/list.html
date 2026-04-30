@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <section class="catalog-hero list-hero">
+    <div>
+      <p class="eyebrow">{{ site.Title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}
+        <div class="intro">{{ . }}</div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="item-section">
+    <div class="item-grid">
+      {{ range .Pages }}
+        {{ if eq .Section "items" }}
+          {{ partial "item-card.html" . }}
+        {{ else }}
+          <article class="item-card">
+            <div class="item-body">
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            </div>
+          </article>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
