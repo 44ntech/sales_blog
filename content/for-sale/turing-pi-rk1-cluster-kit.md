@@ -5,10 +5,10 @@ price = 1200
 category = "Homelab"
 condition = "Used"
 status = "available"
-image = "/uploads/turing-pi-rk1-kit-1.jpeg"
+image = "/uploads/turing-pi-rk1-kit-v2-2.jpeg"
 images = [
-  "/uploads/turing-pi-rk1-kit-1.jpeg",
-  "/uploads/turing-pi-rk1-kit-2.jpeg"
+  "/uploads/turing-pi-rk1-kit-v2-2.jpeg",
+  "/uploads/turing-pi-rk1-kit-v2-1.jpeg"
 ]
 dimensions = "Mini ITX board"
 featured = true
