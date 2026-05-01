@@ -5,9 +5,9 @@ price = 215
 category = "Homelab"
 condition = "Minimally used"
 status = "available"
-image = "/uploads/jetson-nano-b01-bundle-1.jpeg"
+image = "/uploads/jetson-nano-b01-bundle-v2-1.jpeg"
 images = [
-  "/uploads/jetson-nano-b01-bundle-1.jpeg"
+  "/uploads/jetson-nano-b01-bundle-v2-1.jpeg"
 ]
 dimensions = "Jetson Nano B01 development hardware"
 +++
