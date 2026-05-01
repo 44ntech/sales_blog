@@ -1,0 +1,55 @@
+{{ define "main" }}
+  {{ $items := where .RegularPages "Section" "for-sale" }}
+  {{ $available := where $items "Params.status" "!=" "sold" }}
+  {{ $sold := where $items "Params.status" "sold" }}
+  {{ $categories := slice }}
+  {{ range $available }}
+    {{ with .Params.category }}{{ $categories = $categories | append . }}{{ end }}
+  {{ end }}
+
+  <main>
+    <header class="bg-gray-200 dark:bg-gray-900">
+      <div class="px-6 py-16 mx-auto max-w-7xl">
+        <p class="text-sm font-black tracking-widest uppercase text-primary-600 dark:text-primary-300">{{ site.Params.location }}</p>
+        <h1 class="mt-4 text-5xl font-black tracking-tight text-gray-950 dark:text-white md:text-7xl">{{ .Title }}</h1>
+        <div class="mt-5 max-w-2xl text-lg text-gray-800 dark:text-gray-200">{{ .Content }}</div>
+      </div>
+    </header>
+
+    <section class="px-6 py-10 mx-auto max-w-7xl">
+      {{ if $categories }}
+        <nav class="flex flex-wrap gap-2 mb-8" aria-label="Sale categories">
+          <a class="px-4 py-2 text-sm font-black text-white rounded-full bg-primary-600" href="#available">All</a>
+          {{ range uniq $categories }}
+            <a class="px-4 py-2 text-sm font-semibold text-gray-800 bg-white rounded-full shadow dark:bg-gray-900 dark:text-gray-200" href="#{{ . | urlize }}">{{ . }}</a>
+          {{ end }}
+        </nav>
+      {{ end }}
+
+      <div id="available">
+        {{ range $category := uniq $categories }}
+          {{ $categoryItems := where $available "Params.category" $category }}
+          <section id="{{ $category | urlize }}" class="mb-12">
+            <h2 class="mb-4 text-2xl font-black text-gray-950 dark:text-white">{{ $category }}</h2>
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {{ range sort $categoryItems "Params.featured" "desc" }}
+                {{ partial "sale-card.html" . }}
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+      </div>
+
+      {{ if $sold }}
+        <section class="pt-8 mt-8 border-t border-gray-200 dark:border-gray-800">
+          <h2 class="mb-4 text-2xl font-black text-gray-950 dark:text-white">Sold</h2>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {{ range $sold }}
+              {{ partial "sale-card.html" . }}
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    </section>
+  </main>
+{{ end }}

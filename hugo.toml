@@ -1,6 +1,13 @@
 baseURL = "http://localhost:1313/"
 languageCode = "en-us"
-title = "Scott's Sale"
+title = "Scott Davis"
+theme = "tailbliss"
+enableRobotsTXT = true
+enableEmoji = true
+enableInlineShortcodes = true
+
+[pagination]
+pagerSize = 9
 
 [params]
 sellerName = "Scott"
@@ -8,10 +15,90 @@ contactEmail = "hello@example.com"
 contactPhone = ""
 location = "Local pickup"
 currency = "$"
-description = "A simple, fast catalog for items currently available for local sale."
+description = "A personal site for notes, projects, travel, and a fast catalog of things for sale."
+moto = "Notes, useful things, and a small local sale shelf."
+disable_theme_toggle = false
+disable_stay_uptodate = true
+og_image = "/images/site-logo.svg"
+
+[params.social_media.github]
+enabled = false
+
+[params.social_media.facebook]
+enabled = false
+
+[params.social_media.instagram]
+enabled = false
+
+[params.social_media.twitter]
+enabled = false
+
+[params.social_media.linkedin]
+enabled = false
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+identifier = "blog"
+pre = "dropdown"
+name = "Blog"
+weight = 20
+
+[[menu.main]]
+identifier = "for-sale"
+name = "For Sale"
+url = "/for-sale/"
+weight = 30
+
+[[menu.main]]
+identifier = "more"
+name = "More"
+url = "/more/"
+weight = 40
+
+[[menu.blog]]
+identifier = "how-to"
+name = "How-To"
+url = "/blog/how-to/"
+weight = 10
+
+[[menu.blog]]
+identifier = "travel"
+name = "Travel"
+url = "/blog/travel/"
+weight = 20
+
+[[menu.blog]]
+identifier = "personal-projects"
+name = "Personal Projects"
+url = "/blog/personal-projects/"
+weight = 30
+
+[[menu.footer]]
+identifier = "blog"
+name = "Blog"
+url = "/blog/"
+weight = 10
+
+[[menu.footer]]
+identifier = "for-sale"
+name = "For Sale"
+url = "/for-sale/"
+weight = 20
+
+[[menu.footer]]
+identifier = "more"
+name = "More"
+url = "/more/"
+weight = 30
 
 [taxonomies]
 category = "categories"
+tag = "tags"
 
 [markup.goldmark.renderer]
 unsafe = true

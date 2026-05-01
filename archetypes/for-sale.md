@@ -9,4 +9,4 @@ image = "/uploads/placeholder.svg"
 dimensions = ""
 +++
 
-Describe the item here. Include anything a buyer should know: condition notes, included accessories, pickup details, or measurements.
+Describe the item here. Include condition notes, included accessories, pickup details, or measurements.

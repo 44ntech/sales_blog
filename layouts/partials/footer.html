@@ -1,0 +1,16 @@
+<footer class="bg-gray-900">
+  <div class="px-6 py-10 mx-auto max-w-7xl">
+    <nav class="flex flex-wrap justify-center gap-6" aria-label="Footer">
+      {{ range site.Menus.footer }}
+        <a href="{{ .URL | absLangURL }}" class="text-base text-gray-400 hover:text-gray-200">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <p class="mt-8 text-sm text-center text-gray-500">&copy; {{ now.Format "2006" }} {{ .Site.Title }}.</p>
+  </div>
+
+  {{ if not .Site.Params.Disable_theme_toggle }}
+    {{ $js := resources.Get "js/darkmode.js" | js.Build }}
+    <script defer src="{{ $js.RelPermalink }}"></script>
+  {{ end }}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js" crossorigin="anonymous" rel="preconnect"></script>
+</footer>

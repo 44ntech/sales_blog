@@ -1,6 +1,20 @@
-# Sales Catalog
+# Scott Davis Site
 
-A fast Hugo static site for selling a large group of items without maintaining individual marketplace listings.
+A fast Hugo site using the TailBliss theme. It has a Blog area, a For Sale catalog, and a placeholder More section.
+
+## First Clone
+
+This repo uses TailBliss as a Git submodule.
+
+```sh
+git clone --recurse-submodules git@github.com:44ntech/sales_blog.git
+```
+
+If you already cloned it:
+
+```sh
+git submodule update --init --recursive
+```
 
 ## Run Locally
 
@@ -37,7 +51,7 @@ docker run --rm -p 8080:80 sales-catalog-nginx
 
 ## Add Or Update Items
 
-Create one Markdown file per item in `content/items/`.
+Create one Markdown file per item in `content/for-sale/`.
 
 ```toml
 +++
@@ -57,6 +71,16 @@ Short, useful description for buyers.
 Put photos in `static/uploads/` and reference them as `/uploads/photo-name.jpg`.
 
 Use `status = "sold"` to keep an item visible but marked sold. Delete the file if you want it removed completely.
+
+## Blog Sections
+
+Blog subsections live here:
+
+- `content/blog/how-to/`
+- `content/blog/travel/`
+- `content/blog/personal-projects/`
+
+Create Markdown files inside those folders to publish posts.
 
 ## Build Static Files
 
