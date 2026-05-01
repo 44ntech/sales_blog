@@ -5,10 +5,10 @@ price = 150
 category = "Homelab"
 condition = "Used"
 status = "available"
-image = "/uploads/icy-dock-mb699vp-b-1.jpeg"
+image = "/uploads/icy-dock-mb699vp-b-u2-1.jpeg"
 images = [
-  "/uploads/icy-dock-mb699vp-b-1.jpeg",
-  "/uploads/icy-dock-mb699vp-b-2.jpeg"
+  "/uploads/icy-dock-mb699vp-b-u2-1.jpeg",
+  "/uploads/icy-dock-mb699vp-b-u2-2.jpeg"
 ]
 dimensions = "Fits external 5.25 in bay"
 +++
