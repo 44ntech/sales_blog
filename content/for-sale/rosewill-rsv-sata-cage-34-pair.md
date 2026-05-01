@@ -5,11 +5,11 @@ price = 50
 category = "Homelab"
 condition = "Used"
 status = "available"
-image = "/uploads/rosewill-rsv-sata-cage-34-pair-1.jpeg"
+image = "/uploads/rosewill-rsv-sata-cage-34-pair-v2-1.jpeg"
 images = [
-  "/uploads/rosewill-rsv-sata-cage-34-pair-1.jpeg",
-  "/uploads/rosewill-rsv-sata-cage-34-pair-2.jpeg",
-  "/uploads/rosewill-rsv-sata-cage-34-pair-3.jpeg"
+  "/uploads/rosewill-rsv-sata-cage-34-pair-v2-1.jpeg",
+  "/uploads/rosewill-rsv-sata-cage-34-pair-v2-2.jpeg",
+  "/uploads/rosewill-rsv-sata-cage-34-pair-v2-3.jpeg"
 ]
 dimensions = "Each cage fits 3 x 5.25 in bays"
 +++
