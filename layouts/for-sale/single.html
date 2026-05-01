@@ -2,9 +2,20 @@
   <main>
     <article class="px-6 py-12 mx-auto max-w-7xl">
       <div class="grid gap-10 lg:grid-cols-2">
-        <div class="overflow-hidden bg-gray-200 rounded-lg shadow-lg aspect-[4/3] dark:bg-gray-900">
-          {{ with .Params.image }}
-            <img class="object-cover w-full h-full" src="{{ . }}" alt="{{ $.Title }}" width="1200" height="900">
+        <div>
+          <div class="overflow-hidden bg-gray-200 rounded-lg shadow-lg aspect-[4/3] dark:bg-gray-900">
+            {{ with .Params.image }}
+              <img class="object-cover w-full h-full" src="{{ . }}" alt="{{ $.Title }}" width="1200" height="900">
+            {{ end }}
+          </div>
+          {{ with .Params.images }}
+            <div class="grid gap-4 mt-4 md:grid-cols-2">
+              {{ range . }}
+                <a class="block overflow-hidden bg-gray-200 rounded-lg shadow aspect-[4/3] dark:bg-gray-900" href="{{ . }}">
+                  <img class="object-cover w-full h-full" src="{{ . }}" alt="{{ $.Title }}" loading="lazy" width="900" height="675">
+                </a>
+              {{ end }}
+            </div>
           {{ end }}
         </div>
         <div class="self-center">
