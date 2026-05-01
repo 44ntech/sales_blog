@@ -1,5 +1,5 @@
 +++
-title = "Scott Davis"
+title = "SDCreative Blog"
 +++
 
-Notes, personal projects, travel writing, and a simple catalog of items available for local sale.
+How-to notes, travel writing, personal projects, and useful experiments.

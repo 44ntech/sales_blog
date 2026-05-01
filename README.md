@@ -1,4 +1,4 @@
-# Scott Davis Site
+# SDCreative Blog
 
 A fast Hugo site using the TailBliss theme. It has a Blog area, a For Sale catalog, and a placeholder More section.
 
